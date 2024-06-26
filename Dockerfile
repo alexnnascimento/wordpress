@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 
 # Definir o DEBIAN_FRONTEND como noninteractive
 
@@ -9,10 +9,10 @@ RUN apt install -y curl \
     wget \
     supervisor
 
-RUN apt install -y php8.3 \
-     php8.3-fpm \
-     php8.3-cgi \
-     php8.3-mysql 
+RUN apt install -y php8.1 \
+     php8.1-fpm \
+     php8.1-cgi \
+     php8.1-mysql 
 #    php8.1-gd\
 #    php8.1-xml\
 #    php8.1-curl
@@ -29,7 +29,7 @@ COPY config/nginx.conf /etc/nginx/nginx.config
 
 COPY config/web.conf /etc/nginx/sites-enabled/web.conf
 
-#COPY config/php.ini /etc/php/8.1/fpm/php.ini
+COPY config/php.ini /etc/php/8.1/fpm/php.ini
 
 WORKDIR /var/www/html 
 
