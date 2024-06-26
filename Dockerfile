@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 # Definir o DEBIAN_FRONTEND como noninteractive
 
 RUN apt update -y
-#ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt install -y curl \
     wget \
@@ -18,7 +18,7 @@ RUN apt install -y php8.1 \
 #    php8.1-curl
 
 # Reverter o DEBIAN_FRONTEND para não interferir em outras operações
-#ENV DEBIAN_FRONTEND=dialog
+ENV DEBIAN_FRONTEND=dialog
 
 RUN apt install -y nginx 
 
