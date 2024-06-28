@@ -1,12 +1,12 @@
 {
-  "name": "ericlbarnes/wp",
+  "name": "alexnascimento/wp",
   "require": {
     "vlucas/phpdotenv": "^2.2"
   },
   "authors": [
     {
-      "name": "Alex",
-      "email": "alex@mysite.com"
+      "name": "Alex Nascimento",
+      "email": "alexnascimento@examplo.com"
     }
   ]
 }
