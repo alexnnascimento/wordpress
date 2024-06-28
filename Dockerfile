@@ -44,6 +44,7 @@ RUN composer self-update
 COPY config/composer.json ./composer.json
 
 COPY src/wordpress ./wordpress
+
 COPY config/wp-config.php ./wordpress/wp-config.php
 
 COPY config/.env ./.env
