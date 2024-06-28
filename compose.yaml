@@ -21,7 +21,7 @@ services:
     volumes:
       - db:/var/lib/mysql
     env_file:
-      - ./config/.env    
+      - ./.env    
 
 volumes:
   wordpress:
