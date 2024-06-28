@@ -12,12 +12,12 @@ Clone o repositório para a sua máquina local:
 git clone https://github.com/alexnnascimento/wordpress.git
 cd wordpress
 
-Crie um arquivo .env na raiz do projeto e configure as variáveis de ambiente necessárias para acesso ao banco de dados:
+Crie um arquivo .env na raiz do projeto e configure as variáveis de ambiente com os dados de acesso que deseja:
 
 DB_NAME=nome_do_banco
 DB_USER=usuario_do_banco
 DB_PASSWORD=senha_do_banco
-DB_HOST=host_do_banco
+DB_HOST=db #Não é necessário alterar o DB HOST
 
 Substitua nome_do_banco, usuario_do_banco, senha_do_banco e host_do_banco pelos dados de acesso corretos do seu banco de dados.
 
