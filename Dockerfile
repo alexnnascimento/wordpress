@@ -7,12 +7,14 @@ RUN apt update -y
 
 RUN apt install -y curl \
     wget \
-    supervisor
+    supervisor \
+    unzip	
 
 RUN apt install -y php8.3 \
      php8.3-fpm \
      php8.3-cgi \
-     php8.3-mysql 
+     php8.3-mysql \ 
+     php8.3-curl	
 #    php8.1-gd\
 #    php8.1-xml\
 #    php8.1-curl
@@ -33,8 +35,20 @@ COPY config/php.ini /etc/php/8.3/fpm/php.ini
 
 WORKDIR /var/www/html 
 
+RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
+
+RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+RUN composer self-update
+
+COPY config/composer.json ./composer.json
+
 COPY src/wordpress ./wordpress
 COPY config/wp-config.php ./wordpress/wp-config.php
+
+COPY config/.env ./.env
+
+RUN composer install 
 
 #RUN chown -R www-data:www-data wordpress/ && \
 #    find wordpress/ -type d -exec chmod 755 {} \; && \
