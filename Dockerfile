@@ -23,7 +23,7 @@ RUN apt install -y php8.3 \
 # Reverter o DEBIAN_FRONTEND para não interferir em outras operações
 #ENV DEBIAN_FRONTEND=dialog
 
-# Copiar o arquivo de configuração do supervisord para o contêiner
+# Copiar arquivos de configuração
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY config/nginx.conf /etc/nginx/nginx.config
 COPY config/web.conf /etc/nginx/sites-enabled/web.conf
@@ -32,7 +32,7 @@ COPY config/php.ini /etc/php/8.3/fpm/php.ini
 # Definindo diretório de trabalho
 WORKDIR /var/www/html 
 
-# Copiando arquivos do Wordpress 
+# Copiar arquivos do Wordpress 
 COPY src/wordpress ./wordpress
 COPY config/wp-config.php ./wordpress/wp-config.php
 
