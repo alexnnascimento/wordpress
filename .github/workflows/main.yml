@@ -17,6 +17,9 @@ jobs:
           echo "Variáveis de Ambiente:"
           printenv    
       -
+      - name: **Pull Repository**
+        run: git pull
+      - 
         name: Checkout
         uses: actions/checkout@v4
       -
