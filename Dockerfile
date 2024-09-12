@@ -10,6 +10,7 @@ RUN apt install -y curl \
     supervisor \
     unzip \
     nginx
+
 # Install Certbot Nginx Package
 RUN apt install -Y certbot \
     python3-certbot-nginx
