@@ -27,3 +27,7 @@ docker-compose up -d
 
 Isso iniciará o ambiente Docker com WordPress configurado. Você poderá acessar o WordPress através do seu navegador no endereço http://localhost.
 
+Observação:
+
+Para gerar os certificados do letsencrypt, provisoriamente conecte no pod do wordpress e execute "certbot --nginx".
+
