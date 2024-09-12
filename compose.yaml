@@ -7,6 +7,7 @@ services:
       - 80:80
     volumes:
       - wordpress:/var/www/html
+      - letsencrypt:/etc/letsencrypt
     depends_on: 
       - db    
 
@@ -25,4 +26,5 @@ services:
 
 volumes:
   wordpress:
+  letsencrypt:
   db:
